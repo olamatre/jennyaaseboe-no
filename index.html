@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jenny Aasebø Dot Enn O</title>
+  <script src="https://cdn.jsdelivr.net/npm/solid-js@1.1.1/dist/solid.umd.js"></script>
+</head>
+<body>
+  <div id="app"></div>
+
+  <script>
+    const { createSignal, html, render } = Solid;
+
+    const App = () => {
+      const [count, setCount] = createSignal(0);
+
+      return html`
+        <div>
+          <h1>Hei, Jenny👋 Her er ditt nye domene <a href="https://jennyaaseboe.no">jennyaaseboe.no</a></h1>
+          <p>Count: ${count()}</p>
+          <button onclick=${() => setCount(count() + 1)}>Increment</button>
+        </div>
+      `;
+    };
+
+    render(App, document.getElementById('app'));
+  </script>
+</body>
+</html>
