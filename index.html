@@ -11,9 +11,43 @@
         padding: 0;
         box-sizing: border-box;
     }
-    .page {
+    .page { 
         color: blueviolet;
-        background-color: chartreuse
+        height: 100%;
+        width: 100%;
+        left:0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        position: absolute;
+        background: linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3);
+        background-size: 1800% 1800%;
+
+        -webkit-animation: rainbow 18s ease infinite;
+        -z-animation: rainbow 18s ease infinite;
+        -o-animation: rainbow 18s ease infinite;
+        animation: rainbow 18s ease infinite;
+    }
+
+    @-webkit-keyframes rainbow {
+        0%{background-position:0% 82%}
+        50%{background-position:100% 19%}
+        100%{background-position:0% 82%}
+    }
+    @-moz-keyframes rainbow {
+        0%{background-position:0% 82%}
+        50%{background-position:100% 19%}
+        100%{background-position:0% 82%}
+    }
+    @-o-keyframes rainbow {
+        0%{background-position:0% 82%}
+        50%{background-position:100% 19%}
+        100%{background-position:0% 82%}
+    }
+    @keyframes rainbow { 
+        0%{background-position:0% 82%}
+        50%{background-position:100% 19%}
+        100%{background-position:0% 82%}
     }
     .navbar {
         position: absolute;
@@ -50,7 +84,34 @@
         padding-top: 80px;
         height: 330px;
         width: 200px;
-    }
+        -webkit-animation: slideIn 2s forwards;
+        -moz-animation: slideIn 2s forwards;
+        animation: slideIn 2s forwards;
+        }
+        @-webkit-keyframes slideIn {
+        0% {
+            transform: translateX(-900px);
+        }
+        100% {
+            transform: translateX(0);
+        }
+        }
+        @-moz-keyframes slideIn {
+        0% {
+            transform: translateX(-900px);
+        }
+        100% {
+            transform: translateX(0);
+        }
+        }
+        @keyframes slideIn {
+        0% {
+            transform: translateX(-900px);
+        }
+        100% {
+            transform: translateX(0);
+        }
+        }
   </style>
 </head>
 <body>
@@ -65,8 +126,9 @@
         <div class="page">
             <nav class="navbar">
                 <ul class="navbar-list">
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/about">About</a></li>
+                    <li><a href="https://www.norskkalender.no/">Norsk kalender</a></li>
+                    <li><a href="https://mingat.oslo.kommune.no/MinGAT/">Min Gat</a></li>
+                    <li><a href="https://outlook.office.com/">Epost</a></li>
                 </ul>
             </nav>
             <div class="content">
