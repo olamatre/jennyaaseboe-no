@@ -16,11 +16,13 @@
     const App = () => {
       const [count, setCount] = createSignal(0);
 
+      const handleIncrement = () => setCount(count() + 1);
+
       return html`
         <div>
           <h1>Hei, Jenny👋 Her er ditt nye domene <a href="https://jennyaaseboe.no">jennyaaseboe.no</a></h1>
-          <p>Count: ${count()}</p>
-          <button onclick=${() => setCount(count() + 1)}>Increment</button>
+          <p>Count: ${count}</p>
+          <button type="button" onClick=${handleIncrement}>Increment</button>
         </div>
       `;
     };
