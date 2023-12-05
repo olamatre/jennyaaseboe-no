@@ -1,85 +1,139 @@
 <!DOCTYPE html>
 <html lang="no">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jenny Aasebø Dot Enn O</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jenny Aasebø Dot Enn O</title>
 
-  <style>
-    * {
+    <style>
+      * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-    }
-    .page { 
+      }
+      .page {
         color: blueviolet;
         height: 100%;
         width: 100%;
-        left:0;
+        left: 0;
         right: 0;
         top: 0;
         bottom: 0;
         position: absolute;
-        background: linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3);
+        background: linear-gradient(
+          124deg,
+          #ff2400,
+          #e81d1d,
+          #e8b71d,
+          #e3e81d,
+          #1de840,
+          #1ddde8,
+          #2b1de8,
+          #dd00f3,
+          #dd00f3
+        );
         background-size: 1800% 1800%;
 
         -webkit-animation: rainbow 18s ease infinite;
         -z-animation: rainbow 18s ease infinite;
         -o-animation: rainbow 18s ease infinite;
         animation: rainbow 18s ease infinite;
-    }
+      }
 
-    @-webkit-keyframes rainbow {
-        0%{background-position:0% 82%}
-        50%{background-position:100% 19%}
-        100%{background-position:0% 82%}
-    }
-    @-moz-keyframes rainbow {
-        0%{background-position:0% 82%}
-        50%{background-position:100% 19%}
-        100%{background-position:0% 82%}
-    }
-    @-o-keyframes rainbow {
-        0%{background-position:0% 82%}
-        50%{background-position:100% 19%}
-        100%{background-position:0% 82%}
-    }
-    @keyframes rainbow { 
-        0%{background-position:0% 82%}
-        50%{background-position:100% 19%}
-        100%{background-position:0% 82%}
-    }
-    .navbar {
+      @-webkit-keyframes rainbow {
+        0% {
+          background-position: 0% 82%;
+        }
+        50% {
+          background-position: 100% 19%;
+        }
+        100% {
+          background-position: 0% 82%;
+        }
+      }
+      @-moz-keyframes rainbow {
+        0% {
+          background-position: 0% 82%;
+        }
+        50% {
+          background-position: 100% 19%;
+        }
+        100% {
+          background-position: 0% 82%;
+        }
+      }
+      @-o-keyframes rainbow {
+        0% {
+          background-position: 0% 82%;
+        }
+        50% {
+          background-position: 100% 19%;
+        }
+        100% {
+          background-position: 0% 82%;
+        }
+      }
+      @keyframes rainbow {
+        0% {
+          background-position: 0% 82%;
+        }
+        50% {
+          background-position: 100% 19%;
+        }
+        100% {
+          background-position: 0% 82%;
+        }
+      }
+      .navbar {
         position: absolute;
         top: 0;
         width: 100vw;
-    }
-    .navbar-list {
+      }
+      .navbar-list {
         display: flex;
         justify-content: space-around;
         list-style: none;
-    }
-    .content {
+      }
+      .content {
         padding-top: 10vh;
         height: 100vh;
         width: 100vw;
         text-align: center;
-    }
-    .front-image-container {
-        width: 100vw;
+      }
+      .content-under-heading {
+        display: grid;
+        @media screen and (max-width: 810px) {
+          grid-template-areas:
+            "front-image"
+            "calendar";
+        }
+        @media screen and (min-width: 810px) {
+          grid-template-areas: "calendar front-image";
+        }
+      }
+      .front-image-container {
+        grid-area: front-image;
         height: 400px;
         display: flex;
         justify-content: center;
         position: relative;
         img {
-            position: absolute;
-            background: transparent;
+          position: absolute;
+          background: transparent;
         }
-    }
-    .jenny {
+      }
+      .calendar-container {
+        grid-area: calendar;
+      }
+      .calendar {
+        background-color: aliceblue;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .jenny {
         width: 400px;
-    }
-    .thuglife {
+      }
+      .thuglife {
         padding-right: 5px;
         padding-top: 80px;
         height: 330px;
@@ -87,62 +141,171 @@
         -webkit-animation: slideIn 2s forwards;
         -moz-animation: slideIn 2s forwards;
         animation: slideIn 2s forwards;
-        }
-        @-webkit-keyframes slideIn {
+      }
+      @-webkit-keyframes slideIn {
         0% {
-            transform: translateX(-900px);
+          transform: translateX(-900px);
         }
         100% {
-            transform: translateX(0);
+          transform: translateX(0);
         }
-        }
-        @-moz-keyframes slideIn {
+      }
+      @-moz-keyframes slideIn {
         0% {
-            transform: translateX(-900px);
+          transform: translateX(-900px);
         }
         100% {
-            transform: translateX(0);
+          transform: translateX(0);
         }
-        }
-        @keyframes slideIn {
+      }
+      @keyframes slideIn {
         0% {
-            transform: translateX(-900px);
+          transform: translateX(-900px);
         }
         100% {
-            transform: translateX(0);
+          transform: translateX(0);
         }
-        }
-  </style>
-</head>
-<body>
-  <div id="app"></div>
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app"></div>
 
-  <script type="module">
-    import { render } from "https://cdn.skypack.dev/solid-js/web";
-    import html from "https://cdn.skypack.dev/solid-js/html";
+    <script type="module">
+      import { render } from "https://cdn.skypack.dev/solid-js/web";
+      import {
+        createSignal,
+        onMount,
+        For,
+      } from "https://cdn.skypack.dev/solid-js";
+      import html from "https://cdn.skypack.dev/solid-js/html";
 
-    const App = () => {
-      return html`
-        <div class="page">
+      const App = () => {
+        const [month, setMonth] = createSignal(new Date().getMonth() + 1);
+        const [year, setYear] = createSignal(new Date().getFullYear());
+        const [calendar, setCalendar] = createSignal([]);
+
+        const getDaysInMonth = (month, year) =>
+          new Date(year, month, 0).getDate();
+        const getFirstDayOfMonth = (month, year) =>
+          new Date(year, month - 1, 1).getDay();
+
+        const createCalendar = () => {
+          const daysInMonth = getDaysInMonth(month(), year());
+          const firstDay = getFirstDayOfMonth(month(), year());
+          let day = 1;
+          let calendar = [];
+
+          for (let i = 0; i < 6; i++) {
+            let week = [];
+            for (let j = 0; j < 7; j++) {
+              if ((i === 0 && j < firstDay) || day > daysInMonth) {
+                week.push(null);
+              } else {
+                week.push(day);
+                day++;
+              }
+            }
+            if (week.every((day) => day === null)) break;
+            calendar.push(week);
+          }
+
+          setCalendar(calendar);
+        };
+
+        onMount(createCalendar);
+
+        const setPreviousMonth = () => {
+          let previousMonth = month() - 1;
+          let previousYear = year();
+
+          if (previousMonth < 1) {
+            previousMonth = 12;
+            previousYear -= 1;
+          }
+
+          setMonth(previousMonth);
+          setYear(previousYear);
+          createCalendar();
+        };
+
+        const setNextMonth = () => {
+          let nextMonth = month() + 1;
+          let nextYear = year();
+
+          if (nextMonth > 12) {
+            nextMonth = 1;
+            nextYear += 1;
+          }
+
+          setMonth(nextMonth);
+          setYear(nextYear);
+          createCalendar();
+        };
+
+        Date.prototype.getWeekNumber = function () {
+          var firstOfJanuary = new Date(this.getFullYear(), 0, 1);
+          const weekNumber = Math.ceil(
+            ((this - firstOfJanuary) / 86400000 + firstOfJanuary.getDay() + 1) /
+              7
+          );
+          return weekNumber === 53 ? 1 : weekNumber;
+        };
+
+        return html`
+          <div class="page">
             <nav class="navbar">
-                <ul class="navbar-list">
-                    <li><a href="https://www.norskkalender.no/">Norsk kalender</a></li>
-                    <li><a href="https://mingat.oslo.kommune.no/MinGAT/">Min Gat</a></li>
-                    <li><a href="https://outlook.office.com/">Epost</a></li>
-                </ul>
+              <ul class="navbar-list">
+                <li>
+                  <a href="https://www.norskkalender.no/">Norsk kalender</a>
+                </li>
+                <li>
+                  <a href="https://mingat.oslo.kommune.no/MinGAT/">Min Gat</a>
+                </li>
+                <li><a href="https://outlook.office.com/">Epost</a></li>
+              </ul>
             </nav>
             <div class="content">
-                <h1>Velkommen til jennyaaseboe.no</h1>
+              <h1>Velkommen til jennyaaseboe.no</h1>
+              <div class="content-under-heading">
                 <div class="front-image-container">
-                    <img class="jenny" src="./jennyaaseboe.jpg" alt="Jenny Aastebø" />
-                    <img class="thuglife" src="./thuglife.png" alt="Thug life" />
+                  <img
+                    class="jenny"
+                    src="./jennyaaseboe.jpg"
+                    alt="Jenny Aastebø"
+                  />
+                  <img class="thuglife" src="./thuglife.png" alt="Thug life" />
                 </div>
+                <div class="calendar-container">
+                  <div>
+                    <button onClick=${setPreviousMonth}>&lt;</button>
+                    ${month}/${year}
+                    <button onClick=${setNextMonth}>&gt;</button>
+                  </div>
+                  <table class="calendar">
+                    <${For} each=${() => calendar()}>
+                      ${(week) => html`<tr>
+                        <td>
+                          ${new Date(
+                            year(),
+                            month() - 1,
+                            week[0]
+                          ).getWeekNumber()}
+                        </td>
+                        <${For} each=${week}>
+                          ${(day) => html`<td>${day}</td>`}
+                        <//>
+                      </tr>`}
+                    <//>
+                  </table>
+                </div>
+              </div>
             </div>
-        </div>
-      `;
-    };
+          </div>
+        `;
+      };
 
-    render(App, document.getElementById('app'));
-  </script>
-</body>
+      render(App, document.getElementById("app"));
+    </script>
+  </body>
 </html>
