@@ -133,6 +133,9 @@
         margin-left: auto;
         margin-right: auto;
       }
+      .today {
+        border: 2px solid red;
+      }
       .jenny {
         width: 400px;
       }
@@ -246,6 +249,8 @@
           createCalendar();
         };
 
+        const today = new Date();
+
         Date.prototype.getWeekNumber = function () {
           var firstOfJanuary = new Date(this.getFullYear(), 0, 1);
           const weekNumber = Math.ceil(
@@ -309,7 +314,12 @@
                             ).getWeekNumber()}
                           </td>
                           <${For} each=${week}>
-                            ${(day) => html`<td>${day}</td>`}
+                            ${(day) =>
+                              html`<td
+                                class=${today.getDate() === day ? "today" : ""}
+                              >
+                                ${day}
+                              </td>`}
                           <//>
                         </tr>`}
                       <//>
