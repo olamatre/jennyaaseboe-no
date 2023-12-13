@@ -166,6 +166,7 @@
       }
       .jenny {
         width: 400px;
+        cursor: help;
       }
       .thuglife {
         padding-right: 5px;
@@ -175,6 +176,7 @@
         -webkit-animation: slideIn 2s forwards;
         -moz-animation: slideIn 2s forwards;
         animation: slideIn 2s forwards;
+        cursor: help;
       }
       @-webkit-keyframes slideIn {
         0% {
@@ -347,6 +349,7 @@
                     class="jenny"
                     src="./jennyaaseboe.jpg"
                     alt="Jenny Aastebø"
+                    id="superjenny"
                   />
                   <img class="thuglife" src="./thuglife.png" alt="Thug life" />
                 </div>
@@ -440,6 +443,25 @@
       };
 
       render(App, document.getElementById("app"));
+      window.onload = function () {
+        console.log("ready");
+        function play() {
+          const audio = document.getElementById("audio");
+          audio.play();
+        }
+
+        const elements = document.querySelectorAll("#superjenny, .thuglife");
+
+        elements.forEach((element) => {
+          element.addEventListener("click", () => {
+            console.log("... fo sure");
+            play();
+
+          });
+        });
+      };
     </script>
+
+    <audio id="audio" src="stilldre.mp3"></audio>
   </body>
 </html>
