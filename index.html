@@ -124,10 +124,13 @@
           grid-template-areas:
             "front-image"
             "calendar"
-            "clock";
+            "clock"
+            "comment-section";
         }
         @media screen and (min-width: 810px) {
-          grid-template-areas: "calendar front-image clock";
+          grid-template-areas:
+            "calendar front-image clock"
+            "comment-section comment-section comment-section";
         }
       }
       .front-image-container {
@@ -146,6 +149,12 @@
       }
       .clock-container {
         grid-area: clock;
+      }
+      .comment-section-container {
+        grid-area: comment-section;
+        margin: 16px 64px;
+        background-color: lightpink;
+        padding: 32px;
       }
       .calendar {
         background-color: aliceblue;
@@ -195,7 +204,7 @@
   </head>
   <body>
     <div id="app"></div>
-
+    <script async src="https://cusdis.com/js/cusdis.es.js"></script>
     <script type="module">
       import { render } from "https://cdn.skypack.dev/solid-js/web";
       import {
@@ -278,7 +287,7 @@
         };
 
         onMount(() => {
-          const interval = setInterval(() => {
+          setInterval(() => {
             const hour = today.getHours() % 12;
             const minute = today.getMinutes();
 
@@ -294,11 +303,11 @@
               `rotate(${(360 / 60) * minute})`
             );
           }, 1000);
-
-          return () => clearInterval(interval);
         });
 
         onMount(createCalendar);
+
+        onMount(() => window.CUSDIS.initial());
 
         return html`
           <div class="page">
@@ -415,6 +424,15 @@
                     </g>
                   </svg>
                 </div>
+                <div
+                  id="cusdis_thread"
+                  class="comment-section-container"
+                  data-host="https://cusdis.com"
+                  data-app-id="08c79889-7a0d-40b4-93ff-3c2df272428e"
+                  data-page-id="jenny-aaseboe-comment-section"
+                  data-page-url="https://jennyaaseboe.no/"
+                  data-page-title="Jenny Aasebø Dot Enn O"
+                ></div>
               </div>
             </div>
           </div>
